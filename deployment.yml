@@ -1,0 +1,20 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: babji-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: babji
+  template:
+    metadata:
+      labels:
+        app: babji
+    spec:
+      containers:
+      - name: babji-container
+        image: 7893725206/venky:maven-web-app-new-deploy
+        ports:
+        - containerPort: 8080  # Change this if your app listens on a different port
